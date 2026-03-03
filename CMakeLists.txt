@@ -8,6 +8,8 @@ if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   endif()
 endif()
 
+add_definitions(-DLOG_DEBUG)
+
 project(nosleeponcharge)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
@@ -26,8 +28,9 @@ add_executable(nosleeponcharge.elf
 )
 
 target_link_libraries(nosleeponcharge.elf
-  ScePower_stub_weak
   SceLibKernel_stub
+  ScePowerForDriver_stub
+  SceDebugForDriver_stub
   SceThreadmgrForDriver_stub
   SceIofilemgrForDriver_stub
   SceKernelSuspendForDriver_stub
