@@ -24,6 +24,8 @@
 #include <psp2kern/kernel/threadmgr.h>
 #include <psp2kern/kernel/modulemgr.h>
 
+#include <psp2/power.h>
+
 // SCE_KERNEL_POWER_TICK_DEFAULT - Cancel all timers
 // SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND - Cancel automatic suspension timer
 // SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF - Cancel OLED-off timer
@@ -37,11 +39,14 @@
 
 int nosleep_thread(SceSize args, void *argp) {
 	// this is really dirty, but it works
-	while (1) {
-		ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
-		//ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING);
-		//ksceKernelPowerTick(0);
-		ksceKernelDelayThread(1000000); // Delay for a second
+	int is_charging = scePowerIsPowerOnline();
+    if (is_charging == 1){
+        while (1) {
+            ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
+            //ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING);
+            //ksceKernelPowerTick(0);
+            ksceKernelDelayThread(1000000); // Delay for a second
+	    }
 	}
 
 	return 0;

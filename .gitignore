@@ -1,0 +1,16 @@
+.gitignore
+.idea
+CMakeFiles
+clean-repo.sh:Zone.Identifier
+cmake_install.cmake:Zone.Identifier
+CMakeCache.txt:Zone.Identifier
+CMakeLists.txt:Zone.Identifier
+LICENSE:Zone.Identifier
+main.c:Zone.Identifier
+Makefile:Zone.Identifier
+nosleep.elf
+nosleep.elf:Zone.Identifier
+nosleep.skprx:Zone.Identifier
+nosleep.velf:Zone.Identifier
+nosleep.yml:Zone.Identifier
+README.md:Zone.Identifier

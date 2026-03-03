@@ -26,6 +26,7 @@ add_executable(nosleep.elf
 )
 
 target_link_libraries(nosleep.elf
+  ScePower_stub_weak
   SceLibKernel_stub
   SceThreadmgrForDriver_stub
   SceIofilemgrForDriver_stub
