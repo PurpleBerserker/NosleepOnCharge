@@ -25,7 +25,7 @@
 #include <psp2kern/kernel/modulemgr.h>
 #include <psp2kern/kernel/debug.h>
 #include <psp2kern/power.h>
-#incluse "logging/log.h"
+#include "logging/log.h"
 
 // SCE_KERNEL_POWER_TICK_DEFAULT - Cancel all timers
 // SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND - Cancel automatic suspension timer
