@@ -10,9 +10,9 @@ Makefile
 
 # Generated Files
 
-nosleep.elf
-nosleep.velf
-nosleep.skprx
+nosleeponcharge.elf
+nosleeponcharge.velf
+nosleeponcharge.skprx
 
 # Zone.Identifier files because dev on wsl
 clean-repo.sh:Zone.Identifier

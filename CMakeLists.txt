@@ -8,7 +8,7 @@ if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   endif()
 endif()
 
-project(nosleep)
+project(nosleeponcharge)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -O3 -std=gnu99")
@@ -21,11 +21,11 @@ link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-add_executable(nosleep.elf
+add_executable(nosleeponcharge.elf
   main.c
 )
 
-target_link_libraries(nosleep.elf
+target_link_libraries(nosleeponcharge.elf
   ScePower_stub_weak
   SceLibKernel_stub
   SceThreadmgrForDriver_stub
@@ -34,18 +34,18 @@ target_link_libraries(nosleep.elf
   gcc
 )
 
-set_target_properties(nosleep.elf
+set_target_properties(nosleeponcharge.elf
 	PROPERTIES LINK_FLAGS "-nostdlib"
 	COMPILE_FLAGS "-D__VITA_KERNEL__"
 )
 
-add_custom_target(nosleep.skprx ALL
-	COMMAND vita-elf-create -e ${CMAKE_SOURCE_DIR}/nosleep.yml nosleep.elf nosleep.velf ${CMAKE_SOURCE_DIR}/taihen.json
-	COMMAND vita-make-fself -c nosleep.velf nosleep.skprx
+add_custom_target(nosleeponcharge.skprx ALL
+	COMMAND vita-elf-create -e ${CMAKE_SOURCE_DIR}/nosleeponcharge.yml nosleeponcharge.elf nosleeponcharge.velf ${CMAKE_SOURCE_DIR}/taihen.json
+	COMMAND vita-make-fself -c nosleeponcharge.velf nosleeponcharge.skprx
 )
-add_dependencies(nosleep.skprx nosleep.elf)
+add_dependencies(nosleeponcharge.skprx nosleeponcharge.elf)
 
 add_custom_target(send
-	COMMAND curl -T nosleep.skprx ftp://$(PSVITAIP):1337/ux0:/tai/
-	DEPENDS nosleep.skprx
+	COMMAND curl -T nosleeponcharge.skprx ftp://$(PSVITAIP):1337/ux0:/tai/
+	DEPENDS nosleeponcharge.skprx
 )
