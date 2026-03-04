@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#define LOG_PREFIX " [reVita] "
-#define LOG_PATH "ux0:/log/"
-#define LOG_FILE LOG_PATH "reVita.txt"
+#define LOG_PREFIX " [noSleepOnCharge] "
+#define LOG_PATH "ux0:/data/noSleepOnCharge"
+#define LOG_FILE LOG_PATH "noSleepOnCharge.log"
 
 void log_reset(); 
 void log_write(const char *buffer, size_t length);

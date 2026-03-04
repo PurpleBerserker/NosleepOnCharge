@@ -47,7 +47,7 @@ int nosleep_thread(SceSize args, void *argp) {
             // Désactive veille automatique et l'arret de l'ecran OLED
             ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND );
             ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF );
-            LOG("NoSleepOnCharge: Ticks reinitialized\n");
+            LOG("Ticks reinitialized\n");
         }
 
         ksceKernelDelayThread(1000000); // 1 seconde
@@ -64,15 +64,15 @@ int module_start(SceSize argc, const void *args) {
 
     if (thid >= 0) {
         ksceKernelStartThread(thid, 0, NULL);
-        LOG("NoSleepOnCharge: Thread %08X lancé\n", thid);
+        LOG("Thread %08X lancé\n", thid);
     } else {
-        LOG("NoSleepOnCharge: ERREUR thread %08X\n", thid);
+        LOG("ERREUR thread %08X\n", thid);
     }
 
     return SCE_KERNEL_START_SUCCESS;
 }
 
 int module_stop(SceSize argc, const void *args) {
-    LOG("NoSleepOnCharge: Module arrêté\n");
+    LOG("Module arrêté\n");
     return SCE_KERNEL_STOP_SUCCESS;
 }

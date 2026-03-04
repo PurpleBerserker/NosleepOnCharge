@@ -10,20 +10,20 @@ Makefile
 
 # Generated Files
 
-nosleeponcharge.elf
-nosleeponcharge.velf
-nosleeponcharge.skprx
+noSleepOnCharge.elf
+noSleepOnCharge.velf
+noSleepOnCharge.skprx
 
 # Zone.Identifier files because dev on wsl
 clean-repo.sh:Zone.Identifier
 cmake_install.cmake:Zone.Identifier
 CMakeCache.txt:Zone.Identifier
 CMakeLists.txt:Zone.Identifier
-nosleep.yml:Zone.Identifier
+noSleepOnCharge.yml:Zone.Identifier
 README.md:Zone.Identifier
 Makefile:Zone.Identifier
 LICENSE:Zone.Identifier
 main.c:Zone.Identifier
-nosleep.elf:Zone.Identifier
-nosleep.velf:Zone.Identifier
-nosleep.skprx:Zone.Identifier
+noSleepOnCharge.elf:Zone.Identifier
+noSleepOnCharge.velf:Zone.Identifier
+noSleepOnCharge.skprx:Zone.Identifier

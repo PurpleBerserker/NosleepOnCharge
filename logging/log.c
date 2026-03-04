@@ -1,5 +1,3 @@
-
-
 #include <vitasdkkern.h>
 #include <taihen.h>
 #include <psp2kern/io/fcntl.h>
